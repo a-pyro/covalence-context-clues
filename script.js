@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'animate__animated',
             `${i % 2 === 0 ? 'animate__backInLeft' : 'animate__backInRight'}`
         );
-        heading.innerText = `Accusation ${i + 1} `;
+        heading.innerText = `Accusation ${i} `;
         heading.id = `${i + 1}`;
         document.querySelector('.container').appendChild(heading);
 
@@ -53,11 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
         var weapon;
         var room;
 
-        heading.addEventListener('click', letsTryClosures());
+        heading.addEventListener('click', letsTryClosures(i));
     }
-    function letsTryClosures() {
-        return function closure(e) {
-            console.log(e.currentTarget, friend);
+    // console.log(i);
+
+    function letsTryClosures(num) {
+        return function () {
+            // console.log(e.currentTarget, friend);
+            console.log(num);
             // console.log(e.currentTarget);
         };
     }
